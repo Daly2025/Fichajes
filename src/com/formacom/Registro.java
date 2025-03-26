@@ -7,6 +7,12 @@ public class Registro {
     private LocalDateTime fecha;
     private String modo;
 
+    public Registro(Alumno alumno, String modo) {
+        this.alumno = alumno;
+        this.modo = modo;
+        fecha=LocalDateTime.now();
+    }
+
     public Alumno getAlumno() {
         return alumno;
     }
@@ -14,6 +20,12 @@ public class Registro {
     public void setAlumno(Alumno alumno) {
         this.alumno = alumno;
     }
+
+    public LocalDateTime getFecha() {
+        return fecha;
+    }
+
+
 
     public String getModo() {
         return modo;
@@ -23,16 +35,12 @@ public class Registro {
         this.modo = modo;
     }
 
-    public LocalDateTime getFecha() {
-        return fecha;
-    }
-
-
-    public Registro(Alumno alumno, String modo) {
-        this.alumno = alumno;
-        this.modo = modo;
-        fecha=LocalDateTime.now();
-
+    @Override
+    public String toString() {
+        return "Registro{" +
+                "alumno=" + alumno +
+                ", fecha=" + fecha +
+                ", modo='" + modo + '\'' +
+                '}';
     }
 }
-
